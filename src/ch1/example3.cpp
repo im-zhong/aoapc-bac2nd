@@ -2,10 +2,48 @@
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include <cmath>
+#include <cstdio>
 #include <doctest/doctest.h>
-#include <iostream>
 
-TEST_CASE("example 1-3") {
-    std::cout << 1 + 2 * std::sqrt(3) / (5 - 0.1) << std::endl;
+TEST_CASE("exercise 1-3") {
+    int a = 0;
+    int b = 0;
+    std::scanf("%d%d", &a, &b);
+
+    int t = a;
+    a = b;
+    b = t;
+
+    std::printf("%d %d\n", a, b);
+}
+
+TEST_CASE("example 1-8") {
+    int a = 0;
+    int b = 0;
+    std::scanf("%d%d", &a, &b);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    std::printf("%d %d\n", a, b);
+}
+
+TEST_CASE("example 1-8#2") {
+    int a = 0;
+    int b = 0;
+    std::scanf("%d%d", &a, &b);
+
+    a = a - b;
+    b = a + b;
+    a = b - a;
+
+    std::printf("%d %d\n", a, b);
+}
+
+TEST_CASE("example 1-10") {
+    int a = 0;
+    int b = 0;
+    std::scanf("%d%d", &a, &b);
+    std::printf("%d %d\n", b, a);
 }
