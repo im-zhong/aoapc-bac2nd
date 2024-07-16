@@ -6,7 +6,7 @@
 #include <doctest/doctest.h>
 #include <iostream>
 
-TEST_CASE("example 1-1") { std::cout << 1 + 2 << std::endl; }
+TEST_CASE("program 1-1") { std::cout << 1 + 2 << std::endl; }
 
 TEST_CASE("experiment 1") { std::cout << 3 - 4 << std::endl; }
 

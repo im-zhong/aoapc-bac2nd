@@ -5,7 +5,7 @@
 #include <cstdio>
 #include <doctest/doctest.h>
 
-TEST_CASE("exercise 1-3") {
+TEST_CASE("example 1-3") {
     int a = 0;
     int b = 0;
     std::scanf("%d%d", &a, &b);

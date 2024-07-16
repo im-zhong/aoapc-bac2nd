@@ -3,7 +3,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-TEST_CASE("example 1-4") {
+TEST_CASE("program 1-4") {
     int a = 0;
     int b = 0;
 

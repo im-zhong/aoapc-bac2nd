@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <iostream>
 
-TEST_CASE("example 1-2") { std::cout << 8.0 / 5.0 << std::endl; }
+TEST_CASE("program 1-2") { std::cout << 8.0 / 5.0 << std::endl; }
 
 TEST_CASE("experiment 5") {
     // 1. Use std::fixed to ensure that floating-point numbers are written in

@@ -6,7 +6,7 @@
 #include <cstdio>
 #include <doctest/doctest.h>
 
-TEST_CASE("exercise 1-4") {
+TEST_CASE("example 1-4") {
     int n = 0;
     int m = 0;
 

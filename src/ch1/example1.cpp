@@ -6,7 +6,7 @@
 #include <cstdio>
 #include <doctest/doctest.h>
 
-TEST_CASE("exercise 1-1") {
+TEST_CASE("example 1-1") {
     const double pi = std::acos(-1);
     double r = 0;
     double h = 0;

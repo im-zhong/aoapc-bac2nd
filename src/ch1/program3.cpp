@@ -6,6 +6,6 @@
 #include <doctest/doctest.h>
 #include <iostream>
 
-TEST_CASE("example 1-3") {
+TEST_CASE("program 1-3") {
     std::cout << 1 + 2 * std::sqrt(3) / (5 - 0.1) << std::endl;
 }
