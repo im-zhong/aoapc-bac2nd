@@ -1,1 +1,1 @@
-add_executable(bac2nd main.cpp)
+add_subdirectory(ch1)
