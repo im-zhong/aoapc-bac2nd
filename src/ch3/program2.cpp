@@ -3,7 +3,6 @@
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include <cmath>
 #include <cstdio>
 #include <cstring>
 #include <doctest/doctest.h>

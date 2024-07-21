@@ -3,7 +3,6 @@
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include <cmath>
 #include <cstdio>
 #include <cstring>
 #include <doctest/doctest.h>
@@ -13,8 +12,8 @@ int digit_set[10] = {};
 
 TEST_CASE("program 3-4") {
     int n = 0;
-    // n = 2357;
-    std::scanf("%d", &n);
+    n = 2357;
+    // std::scanf("%d", &n);
     if (n == 0) {
         std::printf("The number of solutions: 0\n");
         return;
@@ -118,5 +117,42 @@ TEST_CASE("program 3-4") {
         }
     }
 
+    std::printf("The number of solutions: %d\n", solution_count - 1);
+}
+
+TEST_CASE("program 3-4 book solution") {
+    char digit_set[16] = {'\0'};
+    char digits[64] = {'\0'};
+    // C语言所有的string相关的函数都会正确的处理最后的\0?
+    std::scanf("%s", digit_set);
+
+    int solution_count = 1;
+    for (int abc = 111; abc <= 999; abc++) {
+        for (int de = 11; de <= 99; de++) {
+            int abcd = abc * (de / 10);
+            int abce = abc * (de % 10);
+            int abcde = abc * de;
+
+            // check if the digits in suanshi in all in digit set
+            std::snprintf(digits, sizeof(digits), "%d%d%d%d%d", abc, de, abcd,
+                          abce, abcde);
+
+            bool ok = true;
+            for (int i = 0; i < std::strlen(digits); i++) {
+                if (std::strchr(digit_set, digits[i]) == nullptr) {
+                    ok = false;
+                    break;
+                }
+            }
+            if (!ok) {
+                continue;
+            }
+
+            // print suanshi
+            std::printf("<%d>\n%5d\nX%4d\n-----\n%5d\n%4d \n-----\n%5d\n\n",
+                        solution_count, abc, de, abce, abcd, abcde);
+            solution_count += 1;
+        }
+    }
     std::printf("The number of solutions: %d\n", solution_count - 1);
 }
