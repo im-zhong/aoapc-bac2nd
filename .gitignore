@@ -38,3 +38,7 @@ compile_commands.json
 .cache/
 
 .vscode
+
+**/**.o
+**/**.out*
+**/**tmp**
