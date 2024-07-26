@@ -3,24 +3,29 @@
 
 #include <cstdio>
 #include <cstring>
+using namespace std;
 
-char input[256] = "\0";
+char input[128] = "\0";
 
 int main(int argc, char* argv[]) {
-    while (std::scanf("%s", input) == 1) {
-        int len = std::strlen(input);
+    int lines = 0;
+    scanf("%d", &lines);
+
+    for (int i = 0; i < lines; i++) {
+        scanf("%s", input);
+        int len = strlen(input);
 
         // duplicate this string
-        std::memcpy(input + len, input, len);
+        memcpy(input + len, input, len);
 
         char* p_min = input;
         for (int i = 1; i < len; i++) {
-            if (std::strncmp(p_min, input + i, len) > 0) {
+            if (strncmp(p_min, input + i, len) > 0) {
                 p_min = input + i;
             }
         }
 
         *(p_min + len) = '\0';
-        std::printf("%s\n", p_min);
+        printf("%s\n", p_min);
     }
 }
