@@ -18,10 +18,10 @@ int main() {
         for (char* p = test; *p; p++) {
             if (*p == 'O') {
                 ++accumulated_score;
-                total_score += accumulated_score;
             } else {
                 accumulated_score = 0;
             }
+            total_score += accumulated_score;
         }
         printf("%d\n", total_score);
     }
