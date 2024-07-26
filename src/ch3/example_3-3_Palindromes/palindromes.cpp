@@ -1,11 +1,9 @@
 // 2024/7/21
 // zhangzhong
 
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-
 #include <cstdio>
 #include <cstring>
-#include <doctest/doctest.h>
+using namespace std;
 
 char input[128] = {};
 char mirrored_characters[26 + 1] = "A...3..HIL.JM.O...2TUVWXY5";
@@ -13,10 +11,15 @@ char mirrored_digits[9 + 1] = "1SE.Z..8.";
 // 感觉数字和字母可以分开 毕竟他们在ascii里面也不是连着的
 
 int main() {
-    while (std::scanf("%s", input) == 1) {
+    bool is_start = true;
+    while (scanf("%s", input) == 1) {
+        if (!is_start) {
+            printf("\n\n");
+        }
+        is_start = false;
 
         char* head = input;
-        char* tail = head + std::strlen(input) - 1;
+        char* tail = head + strlen(input) - 1;
 
         bool is_palindrome = true;
 
@@ -25,13 +28,13 @@ int main() {
                 is_palindrome = false;
                 break;
             }
-            head += 1;
-            tail -= 1;
+            head++;
+            tail--;
         }
 
         bool is_mirrored = true;
         head = input;
-        tail = head + std::strlen(input) - 1;
+        tail = head + strlen(input) - 1;
         while (head < tail) {
             if (*head >= 'A' && *head <= 'Z') {
                 if (mirrored_characters[*head - 'A'] != *tail) {
@@ -46,19 +49,19 @@ int main() {
             } else {
                 break;
             }
-            head += 1;
-            tail -= 1;
+            head++;
+            tail--;
         }
 
         // four situation
         if (!is_palindrome && !is_mirrored) {
-            std::printf("%s -- is not a palindrome.\n\n", input);
+            printf("%s -- is not a palindrome.", input);
         } else if (is_palindrome && is_mirrored) {
-            std::printf("%s -- is a mirrored palindrome.\n\n", input);
+            printf("%s -- is a mirrored palindrome.", input);
         } else if (is_palindrome) {
-            std::printf("%s -- is a regular palindrome.\n\n", input);
+            printf("%s -- is a regular palindrome.", input);
         } else {
-            std::printf("%s -- is a mirrored string.\n\n", input);
+            printf("%s -- is a mirrored string.", input);
         }
     }
 }
