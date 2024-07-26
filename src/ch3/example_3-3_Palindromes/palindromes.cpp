@@ -11,12 +11,12 @@ char mirrored_digits[9 + 1] = "1SE.Z..8.";
 // 感觉数字和字母可以分开 毕竟他们在ascii里面也不是连着的
 
 int main() {
-    bool is_start = true;
+    // bool is_start = true;
     while (scanf("%s", input) == 1) {
-        if (!is_start) {
-            printf("\n\n");
-        }
-        is_start = false;
+        // if (!is_start) {
+        //     printf("\n");
+        // }
+        // is_start = false;
 
         char* head = input;
         char* tail = head + strlen(input) - 1;
@@ -63,5 +63,6 @@ int main() {
         } else {
             printf("%s -- is a mirrored string.", input);
         }
+        printf("\n\n");
     }
 }

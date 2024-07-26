@@ -12,9 +12,11 @@ int answer_digits_copy[digit_count] = {};
 // bool right_position_digits[digit_count] = {};
 // bool show_both_digits[digit_count] = {};
 
-char answer[64] = "\0";
-char answer_copy[64] = "\0";
-char guess[64] = "\0";
+const int maxn = 1024;
+
+char answer[maxn] = "\0";
+char answer_copy[maxn] = "\0";
+char guess[maxn] = "\0";
 
 int main(int argc, char* argv[]) {
     int current_game_round = 0;
@@ -29,7 +31,7 @@ int main(int argc, char* argv[]) {
         // new game round begin
         current_game_round += 1;
         std::printf("Game %d:\n", current_game_round);
-        std::fflush(stdout);
+        // std::fflush(stdout);
 
         std::memset(answer_digits, 0, sizeof(answer_digits));
         // get the answer sequence
@@ -119,7 +121,7 @@ int main(int argc, char* argv[]) {
             // }
 
             std::printf("    (%d,%d)\n", A, B);
-            std::fflush(stdout);
+            // std::fflush(stdout);
         }
     }
 }
