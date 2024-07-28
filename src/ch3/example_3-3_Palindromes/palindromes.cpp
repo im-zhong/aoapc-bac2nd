@@ -35,7 +35,10 @@ int main() {
         bool is_mirrored = true;
         head = input;
         tail = head + strlen(input) - 1;
-        while (head < tail) {
+        // This is a BUG!
+        // 镜像串需要考虑最中间的字符 也需要是一个镜像字符
+        // 不像上面我们讨论palin的时候我们是 <, 而这里是<=
+        while (head <= tail) {
             if (*head >= 'A' && *head <= 'Z') {
                 if (mirrored_characters[*head - 'A'] != *tail) {
                     is_mirrored = false;
