@@ -84,7 +84,7 @@ int main() {
 
             if (!move_from(move)) {
                 has_final_configuration = false;
-                // 不对！这里不能直接退出
+                // BUG: 不对！这里不能直接退出
                 // 我们需要把剩下的move全部读完
                 // 否则会影响下一个puzzle的读取
                 while ((move = getchar()) != '0')
