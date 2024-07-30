@@ -1,0 +1,13 @@
+sequence subsequence
+person compression
+VERDI vivaVittorioEmanueleReDiItalia
+caseDoesMatter CaseDoesMatter
+abc abc
+abced abc
+ab abc
+a a
+abc acb
+aaaa ababaaaa
+ababaaaa aaaa
+abc abb
+abc abbc
