@@ -7,7 +7,7 @@
 // good
 using namespace std;
 
-const int MAX_N = 128;
+const int MAX_N = 11000;
 int nums[MAX_N] = {};
 
 int main() {
@@ -29,6 +29,9 @@ int main() {
             int question = 0;
             scanf("%d", &question);
 
+            // Searches for the first element in the partitioned range [first,
+            // last) which is not ordered before value
+            // the first element that <= value
             auto r = lower_bound(nums, nums + n, question);
             if (r && *r == question) {
                 printf("%d found at %ld\n", question, (r - nums) + 1);
