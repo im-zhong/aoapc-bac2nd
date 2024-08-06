@@ -12,6 +12,10 @@
 #include <utility>
 #include <vector>
 
+// 不对，不应该叫container
+// C++20给这个东西起了名字 叫做range！
+#define range(c) c.begin(), c.end()
+
 using namespace std;
 
 using Set = set<int>;
@@ -65,12 +69,17 @@ void do_union() {
     auto s2 = memory[sets.second];
     // 这样可以取出两个集合来
     // 然后这两个集合做交不久ok了吗！！！
-    auto r = vector<int>{};
-    set_union(s1.begin(), s1.end(), s2.begin(), s2.end(), back_inserter(r));
+    // 原来如此，这样是插入到vector中，需要使用back inserter
+    // auto r = vector<int>{};
+    // set_union(s1.begin(), s1.end(), s2.begin(), s2.end(), back_inserter(r));
+
+    // 而像这样插入集合中，直接使用insert即可
+    auto rs = Set{};
+    set_union(range(s1), range(s2), inserter(rs, rs.begin()));
 
     // now r contains the set ids, and make this to a new set
     // and insert into set stack
-    set_stack.push(new_set(Set{r.begin(), r.end()}));
+    set_stack.push(new_set(rs));
 }
 
 void intersect() {
