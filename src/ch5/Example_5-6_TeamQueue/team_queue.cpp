@@ -117,10 +117,45 @@ void run_team_queue(int team_count) {
     }
 }
 
+struct range {
+    range(int start, int end) : start_(start), end_(end) {}
+    // 这个表示一个不会停止的序列，从零开始, 但是目前的实现实际上会停止
+    // 但是应付一般的测试题是没问题的
+    range() : start_(0), end_(start_ - 1) {}
+    // 这两个要怎么解决？看起来只能写两个range了？
+    // range(int end) : start_(0), end_(end) {}
+    range(int start) : start_(start), end_(start - 1) {}
+
+    struct iterator {
+        iterator(int current) : current_(current) {}
+
+        int operator*() const { return current_; }
+
+        iterator& operator++() {
+            current_++;
+            return *this;
+        }
+
+        bool operator!=(const iterator& other) const {
+            return current_ != other.current_;
+        }
+
+      private:
+        int current_;
+    };
+
+    iterator begin() const { return iterator(start_); }
+    iterator end() const { return iterator(end_); }
+
+  private:
+    int start_;
+    int end_;
+};
+
 int main() {
 
-    for (int i = 1;; i++) {
-
+    for (auto i : range(1)) {
+        // for (int i = 1;; i++) {
         int team_count = 0;
         std::scanf("%d", &team_count);
         if (team_count == 0) {
