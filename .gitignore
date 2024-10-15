@@ -42,3 +42,5 @@ compile_commands.json
 **/**.o
 **/**.out*
 **/**tmp**
+
+.DS_Store
