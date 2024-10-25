@@ -56,9 +56,10 @@ class Graph {
     bool HasEulerPath() {
 
         // 无论如何，如果我们只有一条边，那么一定是可以构造的
-        if (this->edge_count_ == 1) {
-            return true;
-        }
+        // 没有这个条件也是可以通过测试的，只不过测试时间变长了一些
+        // if (this->edge_count_ == 1) {
+        //     return true;
+        // }
 
         // first make sure that the graph is connected
         // make a copy of our graph and make it into a undirected graph
