@@ -135,6 +135,7 @@ class HuffmanCoding {
             // 因为vector在push back的时候会发生 resize 他会创建新的节点
             // 导致我们之前保存的节点指针指向错误的内存地址，我竟然才意识到这一点。。。
             // 正确的做法是预先分配足够的内存
+            // 或者 用智能指针是不是也不会出现这个问题？果然不应该使用裸指针啊
             not_leaves.push_back(node);
         }
 
